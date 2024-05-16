@@ -13,12 +13,12 @@ public class JsonReader {
     }
 
     public File selectPayloadJson(String arquivoJson) {
-        String caminhoBasePath = root + "src/test/resources/payloads/" + arquivoJson;
+        String caminhoBasePath = root + "/src/test/resources/payloads/" + arquivoJson;
         return getJson(caminhoBasePath);
     }
 
     public File selectSchemaJson(String arquivoJson) {
-        String caminhoBasePath = root + "src/test/resources/schemas/" + arquivoJson;
+        String caminhoBasePath = root + "/src/test/resources/schemas/" + arquivoJson;
         return getJson(caminhoBasePath);
     }
 
