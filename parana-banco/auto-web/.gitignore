@@ -1,0 +1,14 @@
+# Created by pytest automatically.
+
+#Caches diretory
+.pytest_cache/
+
+# VS Code IDE
+.vscode/
+
+# JetBrains IDE
+.idea/
+*.iml
+
+#Pyhton
+__pycache__/
