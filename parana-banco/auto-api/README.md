@@ -1,5 +1,5 @@
 
-<h1><b>Automcacao API </b></h1>
+<h1><b>Automacao API </b></h1>
 <p>Empresa: ParanaBanco</p>
 
 <hr>
@@ -18,9 +18,9 @@
 
 <p>Abaixo instrucoes passo a passo para instalacao e execucao da respectiva automacao</p>
 <ol>
-  <li>tXXX</li>
-  <li>XXX</li>
-  <li>XXX</li>
+  <li>Intale o Java 21 e configure as variaveis de ambiente</li>
+  <li>Instale o Maven, ultima versao</li>
+  <li>Instale InteliJ IDE</li>
 </ol>
 
 
