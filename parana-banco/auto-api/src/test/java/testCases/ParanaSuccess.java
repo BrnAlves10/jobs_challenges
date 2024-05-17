@@ -3,10 +3,12 @@ package testCases;
 import br.com.parana.automation.callRest.ParanaCalls;
 import br.com.parana.automation.utils.ActionsBase;
 import br.com.parana.automation.utils.JsonReader;
+import br.com.parana.automation.utils.TestResultExtension;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
+import org.junit.jupiter.api.extension.ExtendWith;
 
-
+@ExtendWith(TestResultExtension.class)
 public class ParanaSuccess extends ActionsBase {
 
     ParanaCalls call = new ParanaCalls();

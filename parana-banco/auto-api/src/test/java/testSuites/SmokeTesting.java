@@ -1,9 +1,12 @@
 package testSuites;
 
+import br.com.parana.automation.utils.TestResultExtension;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 import testCases.ParanaFailure;
 import testCases.ParanaSuccess;
 
+@ExtendWith(TestResultExtension.class)
 @Tag("PARANABANCO")
 public class SmokeTesting {
 

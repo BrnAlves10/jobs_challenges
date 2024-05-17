@@ -7,7 +7,7 @@ import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.util.Properties;
 
-public class GlobalEnv extends ConfigUrl {
+public class GlobalEnv {
 
     private Properties properties;
     public static Path root = FileSystems.getDefault().getPath("").toAbsolutePath();
