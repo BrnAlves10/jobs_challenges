@@ -15,7 +15,7 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.*;
 import static org.hamcrest.Matchers.equalTo;
 
-@Tag("ParanaSucessos")
+@Tag("paranaSucessos")
 @ExtendWith(TestResultExtension.class)
 public class ParanaSuccess extends ActionsBase {
 

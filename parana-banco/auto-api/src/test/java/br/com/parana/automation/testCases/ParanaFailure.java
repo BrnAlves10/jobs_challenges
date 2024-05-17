@@ -13,7 +13,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import static io.restassured.RestAssured.given;
 
 
-@Tag("ParanaFalha")
+@Tag("paranaFalha")
 @ExtendWith(TestResultExtension.class)
 public class ParanaFailure extends ActionsBase {
 

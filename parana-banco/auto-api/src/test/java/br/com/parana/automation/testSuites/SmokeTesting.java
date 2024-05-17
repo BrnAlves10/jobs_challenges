@@ -6,7 +6,7 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import br.com.parana.automation.testCases.ParanaFailure;
 
-@Tag("Smoke")
+@Tag("smoke")
 @ExtendWith(TestResultExtension.class)
 public class SmokeTesting {
 
