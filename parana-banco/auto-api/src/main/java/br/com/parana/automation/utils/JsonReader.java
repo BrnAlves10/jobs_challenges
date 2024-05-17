@@ -17,10 +17,9 @@ public class JsonReader {
         return getJson(caminhoBasePath);
     }
 
-    public File selectSchemaJson(String arquivoJson) {
-        String caminhoBasePath = root + "/src/test/resources/schemas/" + arquivoJson;
-        return getJson(caminhoBasePath);
-    }
+    public String selectSchemaJson(String arquivoJson) {
+        return root + "/src/test/resources/schemas/" + arquivoJson;
 
+    }
 
 }
