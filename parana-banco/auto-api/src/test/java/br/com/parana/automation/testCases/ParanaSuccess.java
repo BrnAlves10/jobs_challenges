@@ -12,7 +12,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+import static io.restassured.module.jsv.JsonSchemaValidator.*;
+import static org.hamcrest.Matchers.equalTo;
 
 @Tag("ParanaSucessos")
 @ExtendWith(TestResultExtension.class)
@@ -37,7 +38,7 @@ public class ParanaSuccess extends ActionsBase {
                         .get(ConfigUrl.urlParanaService())
                     .then()
                         .assertThat().statusCode(200)
-                        .log().body()
+                        .log().ifStatusCodeMatches(equalTo(200))
                     .extract();
             report.registroRespostaBodyRelatorio(resposta);
 
@@ -64,7 +65,7 @@ public class ParanaSuccess extends ActionsBase {
                         .post(ConfigUrl.urlParanaService())
                     .then()
                         .assertThat().statusCode(201)
-                        .log().body()
+                        .log().ifStatusCodeMatches(equalTo(201))
                     .extract();
 
             report.registroRespostaBodyRelatorio(resposta);
@@ -91,7 +92,7 @@ public class ParanaSuccess extends ActionsBase {
                         .put(ConfigUrl.urlParanaService() + "/2")
                     .then()
                         .assertThat().statusCode(200)
-                        .log().body()
+                        .log().ifStatusCodeMatches(equalTo(200))
                     .extract();
 
             report.registroRespostaBodyRelatorio(resposta);
@@ -117,7 +118,7 @@ public class ParanaSuccess extends ActionsBase {
                         .delete(ConfigUrl.urlParanaService() + "/3")
                     .then()
                         .assertThat().statusCode(200)
-                        .log().body()
+                        .log().ifStatusCodeMatches(equalTo(200))
                     .extract();
 
             report.registroRespostaBodyRelatorio(resposta);
@@ -140,12 +141,16 @@ public class ParanaSuccess extends ActionsBase {
                     given()
                         .contentType(ContentType.JSON)
                     .when()
-                        .get(ConfigUrl.urlParanaService())
+                        .get(ConfigUrl.urlParanaService() + "/2")
                     .then()
                         .assertThat()
-                            .body(matchesJsonSchemaInClasspath("userSchema.json"))
-                            .statusCode(200)
-                        .log().body()
+                        .body(matchesJsonSchemaInClasspath("schemas/userSchema.json"))
+                        .statusCode(200)
+                        .body("name", equalTo("Ervin Howell"))
+                        .body("username", equalTo("Antonette"))
+                        .body("email", equalTo("Shanna@melissa.tv"))
+                        .body("address.city", equalTo("Wisokyburgh"))
+                        .log().ifStatusCodeMatches(equalTo(200))
                     .extract();
 
             report.registroRespostaBodyRelatorio(resposta);

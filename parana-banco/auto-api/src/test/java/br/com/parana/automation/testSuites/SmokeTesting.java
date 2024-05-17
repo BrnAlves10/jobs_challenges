@@ -53,6 +53,28 @@ public class SmokeTesting {
             paranaSuccess.valida_sucesso_DELETE_paranaBanco();
         }
 
+        @Test
+        @Order(4)
+        @DisplayName("Valida SUCESSO na chamada SCHEMA ParanaBanco")
+        public void schema_paranaService(){
+            paranaSuccess.validacao_SCHEMA();
+        }
+
+    }
+
+
+    @Nested
+    @Order(2)
+    @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+    @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
+    class Validacao_Falhas{
+
+        @Test
+        @Order(1)
+        @DisplayName("Valida FALHA na chamada GET com Endpoint incorreto")
+        public void get_falha_paranaService() {
+            paranaFailure.valida_falha_GET_com_url_incorreta_paranaBanco();
+        }
     }
 
 }
