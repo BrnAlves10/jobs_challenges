@@ -1,6 +1,7 @@
 
 <h1><b>Automacao API </b></h1>
 <p>Empresa: ParanaBanco</p>
+<p>Endpoint: https://jsonplaceholder.typicode.com/users</p>
 
 <hr>
 
