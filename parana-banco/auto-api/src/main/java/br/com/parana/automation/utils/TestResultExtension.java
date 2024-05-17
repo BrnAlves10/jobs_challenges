@@ -7,6 +7,8 @@ import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import io.restassured.response.ExtractableResponse;
+import io.restassured.response.Response;
 import org.junit.jupiter.api.extension.AfterTestExecutionCallback;
 import org.junit.jupiter.api.extension.BeforeTestExecutionCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
@@ -48,6 +50,10 @@ public class TestResultExtension implements BeforeTestExecutionCallback, AfterTe
         } finally {
             extent.flush();
         }
+    }
+
+    public void registroRespostaBodyRelatorio(ExtractableResponse<Response> response) {
+        test.createNode("Responsta do serviço:  ").info(MarkupHelper.createCodeBlock(response.asPrettyString()));
     }
 
 }

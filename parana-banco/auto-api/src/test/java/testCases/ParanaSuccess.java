@@ -13,6 +13,7 @@ public class ParanaSuccess extends ActionsBase {
 
     ParanaCalls call = new ParanaCalls();
     JsonReader jsonReader = new JsonReader();
+    TestResultExtension report = new TestResultExtension();
 
     /**
      * SUCESSO AO Realiza teste de GET
@@ -21,6 +22,7 @@ public class ParanaSuccess extends ActionsBase {
         try {
             ExtractableResponse<Response> resposta = call.getParanaService();
             int respostaCode = resposta.response().getStatusCode();
+            report.registroRespostaBodyRelatorio(resposta);
             comparaStatusCodeRetornado(200, respostaCode);
 
         } catch (AssertionError ae) {
@@ -37,6 +39,7 @@ public class ParanaSuccess extends ActionsBase {
         try {
             ExtractableResponse<Response> resposta = call.postParanaService(jsonReader.selectPayloadJson("payloadPOST.json"));
             int respostaCode = resposta.response().getStatusCode();
+            report.registroRespostaBodyRelatorio(resposta);
             comparaStatusCodeRetornado(201, respostaCode);
 
         } catch (AssertionError ae) {
@@ -53,6 +56,7 @@ public class ParanaSuccess extends ActionsBase {
         try {
             ExtractableResponse<Response> resposta = call.putParanaService(jsonReader.selectPayloadJson("payloadPUT.json"));
             int respostaCode = resposta.response().getStatusCode();
+            report.registroRespostaBodyRelatorio(resposta);
             comparaStatusCodeRetornado(200, respostaCode);
 
         } catch (AssertionError ae) {
@@ -69,6 +73,7 @@ public class ParanaSuccess extends ActionsBase {
         try {
             ExtractableResponse<Response> resposta = call.deleteParanaService();
             int respostaCode = resposta.response().getStatusCode();
+            report.registroRespostaBodyRelatorio(resposta);
             comparaStatusCodeRetornado(200, respostaCode);
 
         } catch (AssertionError ae) {
