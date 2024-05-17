@@ -10,7 +10,7 @@
 <ul>
   <li>Java 21</li>
   <li>Rest Assured</li>
-  <li>Junit</li>git sta
+  <li>Junit</li>
   <li>ExtentReports</li>
   <li>Maven</li>
 </ul>
